@@ -25,31 +25,30 @@ class Point:
     def check_safe(self):
         return self.get_symbol() in self.safe
 
-    def get_neighbors(self):
-        neighbors = []
+    def get_neighbours(self):
+        neighbours = []
 
         if self.y > 0:
-            up = Point(self.components, self.x, self.y - 1, self.safe,
-                       self.rank + 1, "up", self)
-            if up.check_safe():
-                neighbors.append(up)
-        if self.y < (self.height - 1):
-            down = Point(self.components, self.x, self.y + 1, self.safe,
+            down = Point(self.components, self.x, self.y - 1, self.safe,
                          self.rank + 1, "down", self)
             if down.check_safe():
-                neighbors.append(down)
+                neighbours.append(down)
+        if self.y < (self.height - 1):
+            up = Point(self.components, self.x, self.y + 1, self.safe,
+                       self.rank + 1, "up", self)
+            if up.check_safe():
+                neighbours.append(up)
         if self.x < (self.width - 1):
             right = Point(self.components, self.x + 1, self.y, self.safe,
                           self.rank + 1, "right", self)
             if right.check_safe():
-                neighbors.append(right)
+                neighbours.append(right)
         if self.x > 0:
             left = Point(self.components, self.x - 1, self.y, self.safe,
                          self.rank + 1, "left", self)
             if left.check_safe():
-                neighbors.append(left)
-
-        return neighbors
+                neighbours.append(left)
+        return neighbours
 
     def get_move(self, prev_move="none"):
         if self.direction == "none":

@@ -8,6 +8,6 @@ class Components:
     self.id = game_state['you']['id']
     self.body = game_state['you']['body']
     self.head = self.body[0]
-    self.neck = self.body[1]
     self.snakes = game_state['board']['snakes']
+    self.turn = game_state['turn']
     self.board = None
