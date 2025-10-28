@@ -5,17 +5,7 @@ This is a Battlesnake starter project written in Python using Flask. Battlesnake
 
 **Current State**: Fully configured and running in Replit environment on port 5000.
 
-## Recent Changes
-**October 28, 2025**
-- Upgraded pathfinding algorithm from BFS to true A* with Manhattan distance heuristic
-- Replaced `collections.deque` with `heapq` priority queue for optimal node exploration
-- Added `g_score` (actual path cost) and `f_score` (g_score + heuristic) to Point class
-- Implemented `__lt__` comparison for heap ordering by f_score
-- Modified `get_neighbours()` to calculate heuristics for each neighbor node
-- Added `find_target_position()` and `manhattan_distance()` helper functions
-- Result: Significantly improved pathfinding performance and efficiency
-
-**October 27, 2025**
+## Recent Changes (October 27, 2025)
 - Imported from GitHub repository
 - Installed Python 3.11 and Flask dependencies
 - Modified server.py to use port 5000 (Replit requirement)
@@ -27,11 +17,6 @@ This is a Battlesnake starter project written in Python using Flask. Battlesnake
 ### File Structure
 - `main.py` - Core Battlesnake logic (info, start, move, end handlers)
 - `server.py` - Flask web server that hosts the API endpoints
-- `a_star.py` - A* pathfinding algorithm implementation with Manhattan distance heuristic
-- `point.py` - Point class representing board positions with A* scoring (g_score, h_score, f_score)
-- `components.py` - Game state components parser
-- `board.py` - Board representation and utilities
-- `logic.py` - Snake decision-making logic
 - `requirements.txt` - Python dependencies (Flask==2.3.2)
 
 ### API Endpoints
@@ -41,7 +26,7 @@ This is a Battlesnake starter project written in Python using Flask. Battlesnake
 - `POST /end` - Called when game ends
 
 ### How It Works
-The Battlesnake game engine sends HTTP requests to your server. The snake logic in `main.py` processes game state and returns moves (up, down, left, right). The pathfinding system uses the A* algorithm with Manhattan distance heuristic to efficiently find optimal paths to food and other targets on the board.
+The Battlesnake game engine sends HTTP requests to your server. The snake logic in `main.py` processes game state and returns moves (up, down, left, right).
 
 ## Running Locally
 The workflow "Battlesnake Server" is configured to start automatically. The server runs on port 5000 and can be accessed via the Replit webview.
